@@ -41,6 +41,10 @@ class BaselineIdea extends AbstractBaselinePlugin {
                     addCopyright(node)
                     addCheckstyle(node)
                     addGit(node)
+                }
+
+                ideaRootModel.workspace.iws.withXml { provider ->
+                    def node = provider.asNode()
                     addJUnitWorkingDirectory(node)
                 }
             }
